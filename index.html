@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/frailejon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páramo Flora Interactivo</title>
+    <!-- Script de Protección Anti-DevTools -->
+    <script>
+      // Bloquear clic derecho
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
+      // Bloquear combinaciones de teclado de DevTools
+      document.addEventListener('keydown', function(event) {
+        if (event.keyCode == 123) { // F12
+          event.preventDefault();
+        }
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Ctrl+Shift+I
+          event.preventDefault();
+        }
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 67) { // Ctrl+Shift+C
+          event.preventDefault();
+        }
+        if (event.ctrlKey && event.shiftKey && event.keyCode == 74) { // Ctrl+Shift+J
+          event.preventDefault();
+        }
+        if (event.ctrlKey && event.keyCode == 85) { // Ctrl+U (Ver código fuente)
+          event.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

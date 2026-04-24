@@ -14,35 +14,32 @@ export default defineConfig(({ mode }) => {
       mode === 'production' && obfuscatorPlugin({
         include: ['src/**/*.js', 'src/**/*.jsx', 'src/**/*.ts', 'src/**/*.tsx'],
         apply: 'build',
-        debugger: true,
         options: {
           compact: true,
           controlFlowFlattening: true,
-          controlFlowFlatteningThreshold: 1,
-          deadCodeInjection: true,
-          deadCodeInjectionThreshold: 1,
-          debugProtection: true,
-          debugProtectionInterval: 4000,
-          disableConsoleOutput: true,
+          controlFlowFlatteningThreshold: 0.75,
+          deadCodeInjection: false, // Reduced for stability
+          debugProtection: false, // Disabled to prevent white screen
+          disableConsoleOutput: false, // Enabled to allow debugging
           identifierNamesGenerator: 'hexadecimal',
           log: false,
           numbersToExpressions: true,
           renameGlobals: false,
-          selfDefending: true,
+          selfDefending: false, // Disabled to prevent white screen
           simplify: true,
           splitStrings: true,
-          splitStringsChunkLength: 5,
+          splitStringsChunkLength: 10,
           stringArray: true,
           stringArrayCallsTransform: true,
-          stringArrayEncoding: ['rc4'],
+          stringArrayEncoding: ['base64'], // Changed from rc4 for better compatibility
           stringArrayIndexShift: true,
           stringArrayRotate: true,
           stringArrayShuffle: true,
-          stringArrayWrappersCount: 5,
+          stringArrayWrappersCount: 2,
           stringArrayWrappersChainedCalls: true,    
-          stringArrayWrappersParametersMaxCount: 5,
+          stringArrayWrappersParametersMaxCount: 2,
           stringArrayWrappersType: 'function',
-          stringArrayThreshold: 1,
+          stringArrayThreshold: 0.75,
           transformObjectKeys: true,
           unicodeEscapeSequence: false
         }

@@ -81,14 +81,7 @@ function App() {
             </a>
           </div>
           
-          <div className="flex flex-col items-center gap-1">
-            <span className="text-xs text-slate-500 uppercase tracking-wider font-bold">Visitas Totales</span>
-            <img 
-              src="https://profile-counter.glitch.me/jamar-paramo-quiz/count.svg" 
-              alt="Contador de Visitas" 
-              className="h-6 rounded bg-slate-800/50 p-0.5"
-            />
-          </div>
+          
         </div>
       </footer>
     </div>
